@@ -1,3 +1,27 @@
+########## db  security group  ##############
+variable "db_sec_grp_name" {
+  description = "db security group name"
+  type        = string
+  default     = "db_sec_group"
+}
+
+variable "db_sec_grp_from_port" {
+  description = "from port"
+  type        = number
+  default     = 5432
+}
+
+variable "db_sec_grp_to_port" {
+  description = "to port"
+  type        = number
+  default     = 5432
+}
+
+variable "db_sec_grp_protocol" {
+  description = "protocol"
+  type        = string
+  default     = "tcp"
+}
 ##########   VPC  ##############
 variable "vpc_name" {
   description = "vpc name"
@@ -71,4 +95,66 @@ variable "enable_dns_support" {
   description = "dns hostnames"
   type = bool
   default = true
+}
+
+
+##########   EKS  ##############
+variable "cluster_name" {
+  description = "cluster name"
+  type        = string
+  default     = "go_app"
+}
+
+variable "cluster_version" {
+  description = "cluster version"
+  type        = string
+  default     = "1.22"
+}
+
+variable "private_access" {
+  description = "access cluster privately"
+  type = bool
+  default = true
+}
+
+variable "public_access" {
+  description = "access cluster publicly"
+  type = bool
+  default = true
+}
+
+variable "enable_irsa" {
+  description = "enable roles for service accounts"
+  type = bool
+  default = true
+}
+
+variable "node_group_instance_types" {
+  description = "list of instance types for worker nodes"
+  type = list(string)
+  default = ["t2.micro"]
+}
+
+variable "node_group_min_size" {
+  description = "minimum instances"
+  type = number
+  default = 1
+}
+
+variable "node_group_max_size" {
+  description = "maximum instances"
+  type = number
+  default = 1
+}
+
+variable "node_group_desired_size" {
+  description = "desired instances"
+  type = number
+  default = 1
+}
+
+variable "node_group_capacity_type" {
+  description = "capacity type"
+  type        = string
+  default     = "ON_DEMAND"
 }

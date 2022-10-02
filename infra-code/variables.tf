@@ -158,3 +158,128 @@ variable "node_group_capacity_type" {
   type        = string
   default     = "ON_DEMAND"
 }
+
+
+##########    RDS    ################
+
+variable "engine" {
+  description = "db engine"
+  type        = string
+  default     = "postgres"
+}
+
+variable "engine_version" {
+  description = "db engine version"
+  type        = string
+  default     = "14.1"
+}
+
+variable "instance_class" {
+  description = "db instance class"
+  type        = string
+  default     = "db.t3.micro"
+}
+
+variable "allocated_storage" {
+  description = "db storage"
+  type        = string
+  default     = "20"
+}
+
+variable "storage_type" {
+  description = "db storage type"
+  type        = string
+  default     = "gp2"
+}
+
+variable "multi_az" {
+  description = "multi az"
+  type        = bool
+  default     = true
+}
+
+variable "availability_zone" {
+  description = "az"
+  type        = string
+  default     = "us-east-2a"
+}
+
+
+variable "db_name" {
+  description = "db name"
+  type        = string
+  default     = "app"
+}
+
+variable "user_name" {
+  description = "user name"
+  type        = string
+  default     = "postgres"
+}
+
+variable "db_port" {
+  description = "db port"
+  type        = string
+  default     = "5432"
+}
+
+variable "iam_database_authentication_enabled" {
+  description = "authentication using iam"
+  type        = bool
+  default     = true
+}
+
+variable "maintenance_window" {
+  description = "maintance window for backup"
+  type        = string
+  default     = "Mon:00:00-Mon:03:00"
+}
+
+variable "monitoring_interval" {
+  description = "monitoring interval"
+  type        = string
+  default     = "30"
+}
+
+variable "monitoring_role_name" {
+  description = "monitoring role name"
+  type        = string
+  default     = "DataPocRdsRole"
+}
+
+variable "create_monitoring_role" {
+  description = "monitoring role"
+  type        = bool
+  default     = true
+}
+
+variable "create_db_subnet_group" {
+  description = "monitoring role"
+  type        = bool
+  default     = false
+}
+
+variable "family" {
+  description = "db family"
+  type        = string
+  default     = "postgres14"
+}
+
+variable "major_engine_version" {
+  description = "db family"
+  type        = string
+  default     = "14"
+}
+
+
+variable "create_db_option_group" {
+  description = "monitoring role"
+  type        = bool
+  default     = false
+}
+
+variable "deletion_protection" {
+  description = "monitoring role"
+  type        = bool
+  default     = false
+}

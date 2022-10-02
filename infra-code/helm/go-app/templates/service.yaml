@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "go-app.fullname" . }}
+  {{- if .Values.namespace.enabled }}
+  namespace: {{ .Values.namespace.serviceNamespace }}
+  {{- end }}
+  labels:
+    {{- include "go-app.labels" . | nindent 4 }}
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-internal: "false"
+    service.beta.kubernetes.io/aws-load-balancer-type: "external"
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "go-app.selectorLabels" . | nindent 4 }}

@@ -1,6 +1,6 @@
 module "postgres_db" {
   source  = "terraform-aws-modules/rds/aws"
-  identifier = "go_app_postgres"
+  identifier = "go-app-postgres"
 
   engine            = var.engine
   engine_version    = var.engine_version
@@ -46,6 +46,7 @@ module "postgres_db" {
 create_db_option_group = var.create_db_option_group
   # Database Deletion Protection
   deletion_protection = var.deletion_protection
+  
 
 }
 

@@ -171,7 +171,7 @@ variable "engine" {
 variable "engine_version" {
   description = "db engine version"
   type        = string
-  default     = "14.1"
+  default     = "10.17"
 }
 
 variable "instance_class" {
@@ -262,13 +262,13 @@ variable "create_db_subnet_group" {
 variable "family" {
   description = "db family"
   type        = string
-  default     = "postgres14"
+  default     = "postgres10"
 }
 
 variable "major_engine_version" {
   description = "db family"
   type        = string
-  default     = "14"
+  default     = "10"
 }
 
 

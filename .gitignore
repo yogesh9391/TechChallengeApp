@@ -22,3 +22,9 @@ dist/
 
 # Output Binary
 TechChallengeApp
+
+# infra-code
+infra-code/terraform/terraform.tfstate
+infra-code/terraform/terraform.tfstate.backup
+infra-code/terraform/.terraform
+infra-code/terraform/.terraform.lock.hcl

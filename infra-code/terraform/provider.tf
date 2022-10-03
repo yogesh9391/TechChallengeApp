@@ -10,8 +10,7 @@ terraform {
 }
 
 provider "aws" {
-## cheapest region
-region = "us-east-2"
+  ## cheapest region
+  region = "ap-south-1"
 
 }
-

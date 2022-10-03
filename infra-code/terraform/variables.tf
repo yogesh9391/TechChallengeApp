@@ -38,63 +38,63 @@ variable "vpc_cidr" {
 
 variable "azs" {
   description = "list of AZs"
-  type = list(string)
-  default = ["us-east-2a", "us-east-2b"]
+  type        = list(string)
+  default     = ["us-east-2a", "us-east-2b"]
 }
 
 variable "private_subnets" {
   description = "list of private subnets"
-  type = list(string)
-  default = ["10.0.1.0/24", "10.0.2.0/24"]
+  type        = list(string)
+  default     = ["10.0.1.0/24", "10.0.2.0/24"]
 }
 
 variable "database_subnets" {
   description = "list of database subnets"
-  type = list(string)
-  default = ["10.0.3.0/24", "10.0.4.0/24"]
+  type        = list(string)
+  default     = ["10.0.3.0/24", "10.0.4.0/24"]
 }
 
 variable "create_database_subnet_group" {
   description = "db subnet create"
-  type = bool
-  default = true
+  type        = bool
+  default     = true
 }
 
 variable "public_subnets" {
   description = "list of public subnets"
-  type = list(string)
-  default = ["10.0.5.0/24"]
+  type        = list(string)
+  default     = ["10.0.5.0/24"]
 }
 
 variable "enable_nat_gateway" {
   description = "nat gateway"
-  type = bool
-  default = true
+  type        = bool
+  default     = true
 }
 
 variable "single_nat_gateway" {
   description = "single nat gateway"
-  type = bool
-  default = true
+  type        = bool
+  default     = true
 }
 
 variable "one_nat_gateway_per_az" {
   description = "single nat gateway per AZ or common"
-  type = bool
-  default = false
+  type        = bool
+  default     = false
 }
 
 variable "enable_dns_hostnames" {
   description = "dns hostnames"
-  type = bool
-  default = true
+  type        = bool
+  default     = true
 }
 
 
 variable "enable_dns_support" {
   description = "dns hostnames"
-  type = bool
-  default = true
+  type        = bool
+  default     = true
 }
 
 
@@ -113,44 +113,44 @@ variable "cluster_version" {
 
 variable "private_access" {
   description = "access cluster privately"
-  type = bool
-  default = true
+  type        = bool
+  default     = true
 }
 
 variable "public_access" {
   description = "access cluster publicly"
-  type = bool
-  default = true
+  type        = bool
+  default     = true
 }
 
 variable "enable_irsa" {
   description = "enable roles for service accounts"
-  type = bool
-  default = true
+  type        = bool
+  default     = true
 }
 
 variable "node_group_instance_types" {
   description = "list of instance types for worker nodes"
-  type = list(string)
-  default = ["t2.micro"]
+  type        = list(string)
+  default     = ["t2.micro"]
 }
 
 variable "node_group_min_size" {
   description = "minimum instances"
-  type = number
-  default = 1
+  type        = number
+  default     = 1
 }
 
 variable "node_group_max_size" {
   description = "maximum instances"
-  type = number
-  default = 1
+  type        = number
+  default     = 1
 }
 
 variable "node_group_desired_size" {
   description = "desired instances"
-  type = number
-  default = 1
+  type        = number
+  default     = 1
 }
 
 variable "node_group_capacity_type" {
@@ -162,10 +162,16 @@ variable "node_group_capacity_type" {
 
 ##########    RDS    ################
 
+variable "dbcluster_name" {
+  description = "db cluster name"
+  type        = string
+  default     = "go-app-postgres"
+}
+
 variable "engine" {
   description = "db engine"
   type        = string
-  default     = "postgres"
+  default     = "aurora-postgresql"
 }
 
 variable "engine_version" {
@@ -177,7 +183,7 @@ variable "engine_version" {
 variable "instance_class" {
   description = "db instance class"
   type        = string
-  default     = "db.t3.micro"
+  default     = "db.r5.large"
 }
 
 variable "allocated_storage" {

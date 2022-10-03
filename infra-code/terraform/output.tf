@@ -13,6 +13,7 @@ output "cluster_database_name" {
 
 output "cluster_master_username" {
   value = module.aurora_cluster.cluster_master_username
+  sensitive = true
 }
 
 output "db_sec_group_id" {

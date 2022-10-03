@@ -35,8 +35,3 @@ module "aurora_cluster" {
     Terraform = "true"
   }
 }
-
-output "cluster_master_password" {
-  value     = module.aurora_cluster.cluster_master_password
-  sensitive = true
-}

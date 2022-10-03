@@ -42,7 +42,3 @@ module "go_app_eks" {
     }
   }
 }
-
-output "node_security_group_id" {
-  value = module.go_app_eks.node_security_group_id
-}

@@ -22,10 +22,7 @@ module "go_app_vpc" {
 
 }
 
-output "private_subnets" {
-  description = "List of IDs of private subnets"
-  value       = module.go_app_vpc.private_subnets
-}
+
 
 resource "aws_security_group" "db_sec_group" {
   name        = var.db_sec_grp_name
@@ -39,8 +36,4 @@ resource "aws_security_group" "db_sec_group" {
     security_groups = [module.go_app_eks.node_security_group_id]
 
   }
-}
-
-output "db_sec_group_id" {
-  value = aws_security_group.db_sec_group.id
 }

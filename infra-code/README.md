@@ -1,12 +1,13 @@
 ## pre-requisites
-1. install required tools
-install terraform v1.3.0
-install helm v3
-install aws cli
-export Access key id and secret id
-export AWS_ACCESS_KEY_ID=<ACCES-KEY>
-export AWS_SECRET_ACCESS_KEY=<SECRET-KEY_ID>
-
+1. install required tools   
+   install terraform v1.3.0   
+   install helm v3    
+   install aws cli    
+         
+ export Access key id and secret id
+    export AWS_ACCESS_KEY_ID=<ACCES-KEY>    
+    export AWS_SECRET_ACCESS_KEY=<SECRET-KEY_ID>     
+      
 OR if create  role and attach to the underlying instance.
 
 2. default vpc cidr is 10.0.0.0/16. If this is not available in your account, please change it and accordingly change subnets cidrs.

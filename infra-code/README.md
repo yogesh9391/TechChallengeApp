@@ -50,6 +50,11 @@ After successful deployment of application, it will create one kuberntes service
 
 
 
+## Architecture
+![eks-rds](https://user-images.githubusercontent.com/8499534/193521831-58acb4de-1af1-454b-a12a-4bd6fb8b0a95.jpg)
+
+
+
 ## future enhancements
 1. terraform backend :-
     for simplicity, I used local backend. However, one can use S3 remote backend with dynamoDB table for state locking.
@@ -59,10 +64,10 @@ After successful deployment of application, it will create one kuberntes service
 5. Better auditing and monitoring can be done using cloudwatch, prometheus and EKS auditing feature.
 6. docker image has root privilages, we can recreate dockerfile with non-root user.
 7. Vertical Pod Autoscaler for resource consumption optimisation.
-8. cluster level security
-    -> CIS benchmarks
-    -> hardened worker node images
-    -> pod security policies/ Open Policy Agent
-    -> security context
-    -> network policies
-    -> Service mesh like istio for TLS based traffic within cluster.
+8. cluster level security   
+    -> CIS benchmarks   
+    -> hardened worker node images   
+    -> pod security policies/ Open Policy Agent   
+    -> security context   
+    -> network policies    
+    -> Service mesh like istio for TLS based traffic within cluster.    
